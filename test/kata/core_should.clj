@@ -3,10 +3,10 @@
       [kata.core :refer :all]))
 
 (facts
-  "about Kata"
+  "About score keeper"
   (fact
-    "print hello world"
-    (hello-world) => "Hello world"
+    "Team A scores a point "
+    (score-team-a) => 1
 
   )
   

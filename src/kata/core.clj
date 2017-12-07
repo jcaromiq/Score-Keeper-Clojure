@@ -1,3 +1,3 @@
 (ns kata.core)
 
-(defn hello-world [] "Hello world")
+(defn score-team-a [] 1)
