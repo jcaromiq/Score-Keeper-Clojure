@@ -11,3 +11,16 @@
 (defn score-team-a-3
   ([]  {:teamA 3 :teamB 0})
   ([score] (assoc score :teamA (+ (:teamA score) 3))))
+
+
+(defn score-team-b
+  ([] {:teamA 0 :teamB 1})
+  ([score] (assoc score :teamB (+ (:teamB score) 1))))
+
+(defn score-team-b-2
+  ([] {:teamA 0 :teamB 2})
+  ([score] (assoc score :teamB (+ (:teamB score) 2))))
+
+(defn score-team-b-3
+  ([]  {:teamA 0 :teamB 3})
+  ([score] (assoc score :teamB (+ (:teamB score) 3))))
