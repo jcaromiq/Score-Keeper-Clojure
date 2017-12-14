@@ -34,3 +34,5 @@
 (defn visitor-scores-three-points
   ([{visitor :visitor :as score}]
    (assoc score :visitor (three-points-to visitor))))
+
+(defn get-score [score] "000:000")

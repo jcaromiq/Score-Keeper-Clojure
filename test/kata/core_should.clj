@@ -3,7 +3,7 @@
             [kata.core :refer :all]))
 
 (facts
-  "About score keeper"
+  "About score points"
   (fact "Local scores a point"
         (-> (start-match)
             local-scores-one-point) => {:local 1 :visitor 0})
@@ -50,3 +50,8 @@
           local-scores-three-points
           local-scores-three-points
           visitor-scores-two-points) => {:local 12 :visitor 6}))
+
+(facts "About scoreKeeper"
+  (fact "print an empty score"
+        (-> (start-match)
+            get-score) => "000:000"))
