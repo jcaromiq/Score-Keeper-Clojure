@@ -41,17 +41,23 @@
             visitor-scores-two-points) => {:local 0 :visitor 6})
 
   (fact "Visitor and local chains different points"
-      (-> (start-match)
-          visitor-scores-one-point
-          local-scores-three-points
-          local-scores-one-point
-          visitor-scores-three-points
-          local-scores-two-points
-          local-scores-three-points
-          local-scores-three-points
-          visitor-scores-two-points) => {:local 12 :visitor 6}))
+        (-> (start-match)
+            visitor-scores-one-point
+            local-scores-three-points
+            local-scores-one-point
+            visitor-scores-three-points
+            local-scores-two-points
+            local-scores-three-points
+            local-scores-three-points
+            visitor-scores-two-points) => {:local 12 :visitor 6}))
 
 (facts "About scoreKeeper"
-  (fact "print an empty score"
-        (-> (start-match)
-            get-score) => "000:000"))
+       (fact "print an empty score"
+             (get-score {:local 0 :visitor 0}) => "000:000")
+       (fact "print a score when local and visitor have minus than ten point"
+             (get-score {:local 9 :visitor 9}) => "009:009")
+       (fact "print a score have minus than one hundred points"
+             (get-score {:local 99 :visitor 99}) => "099:099")
+       (fact "print a score have more than one hundred points"
+             (get-score {:local 112 :visitor 112}) => "112:112")
+       )
