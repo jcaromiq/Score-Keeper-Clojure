@@ -59,5 +59,16 @@
        (fact "print a score have minus than one hundred points"
              (get-score {:local 99 :visitor 99}) => "099:099")
        (fact "print a score have more than one hundred points"
-             (get-score {:local 112 :visitor 112}) => "112:112")
-       )
+             (get-score {:local 112 :visitor 112}) => "112:112"))
+
+(fact "get final score of match"
+      (-> (start-match)
+          visitor-scores-one-point
+          local-scores-three-points
+          local-scores-one-point
+          visitor-scores-three-points
+          local-scores-two-points
+          local-scores-three-points
+          local-scores-three-points
+          visitor-scores-two-points
+          get-score) => "012:006")
