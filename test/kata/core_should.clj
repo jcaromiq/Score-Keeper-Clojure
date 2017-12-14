@@ -4,39 +4,39 @@
 
 (facts
   "About score keeper"
-  (fact "Team A scores a point"
+  (fact "Local scores a point"
         (-> (start-match)
-            score-team-a) => {:teamA 1 :teamB 0})
+            local-scores-one-point) => {:local 1 :visitor 0})
 
-  (fact "Team A scores two points"
+  (fact "Local scores two points"
         (-> (start-match)
-            score-team-a-2) => {:teamA 2 :teamB 0})
+            local-scores-two-points) => {:local 2 :visitor 0})
 
-  (fact "Team A scores three points"
+  (fact "Local scores three points"
         (-> (start-match)
-            score-team-a-3) => {:teamA 3 :teamB 0})
+            local-scores-three-points) => {:local 3 :visitor 0})
 
-  (fact "Team A chains different points"
+  (fact "Local chains different points"
         (-> (start-match)
-            score-team-a
-            score-team-a-3
-            score-team-a-2) => {:teamA 6 :teamB 0})
+            local-scores-one-point
+            local-scores-three-points
+            local-scores-two-points) => {:local 6 :visitor 0})
 
-  (fact "Team B scores a point"
+  (fact "Visitor scores a point"
         (-> (start-match)
-            score-team-b) => {:teamA 0 :teamB 1})
+            visitor-scores-one-point) => {:local 0 :visitor 1})
 
-  (fact "Team B scores two points"
+  (fact "Visitor scores two points"
         (-> (start-match)
-            score-team-b-2) => {:teamA 0 :teamB 2})
+            visitor-scores-two-points) => {:local 0 :visitor 2})
 
-  (fact "Team B scores three points"
+  (fact "Visitor scores three points"
         (-> (start-match)
-            score-team-b-3) => {:teamA 0 :teamB 3})
+            visitor-scores-three-points) => {:local 0 :visitor 3})
 
-  (fact "Team B chains different points"
+  (fact "Visitor chains different points"
         (-> (start-match)
-            score-team-b
-            score-team-b-3
-            score-team-b-2) => {:teamA 0 :teamB 6}))
+            visitor-scores-one-point
+            visitor-scores-three-points
+            visitor-scores-two-points) => {:local 0 :visitor 6}))
 

@@ -2,23 +2,23 @@
 
 (defn start-match
   []
-  {:teamA 0 :teamB 0})
+  {:local 0 :visitor 0})
 
-(defn score-team-a
-   ([score] (assoc score :teamA (+ (:teamA score) 1))))
+(defn local-scores-one-point
+   ([score] (assoc score :local (+ (:local score) 1))))
 
-(defn score-team-a-2
-  ([score] (assoc score :teamA (+ (:teamA score) 2))))
+(defn local-scores-two-points
+  ([score] (assoc score :local (+ (:local score) 2))))
 
-(defn score-team-a-3
-  ([score] (assoc score :teamA (+ (:teamA score) 3))))
+(defn local-scores-three-points
+  ([score] (assoc score :local (+ (:local score) 3))))
 
 
-(defn score-team-b
-  ([score] (assoc score :teamB (+ (:teamB score) 1))))
+(defn visitor-scores-one-point
+  ([score] (assoc score :visitor (+ (:visitor score) 1))))
 
-(defn score-team-b-2
-  ([score] (assoc score :teamB (+ (:teamB score) 2))))
+(defn visitor-scores-two-points
+  ([score] (assoc score :visitor (+ (:visitor score) 2))))
 
-(defn score-team-b-3
-  ([score] (assoc score :teamB (+ (:teamB score) 3))))
+(defn visitor-scores-three-points
+  ([score] (assoc score :visitor (+ (:visitor score) 3))))
