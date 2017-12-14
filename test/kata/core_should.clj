@@ -38,5 +38,15 @@
         (-> (start-match)
             visitor-scores-one-point
             visitor-scores-three-points
-            visitor-scores-two-points) => {:local 0 :visitor 6}))
+            visitor-scores-two-points) => {:local 0 :visitor 6})
 
+  (fact "Visitor and local chains different points"
+      (-> (start-match)
+          visitor-scores-one-point
+          local-scores-three-points
+          local-scores-one-point
+          visitor-scores-three-points
+          local-scores-two-points
+          local-scores-three-points
+          local-scores-three-points
+          visitor-scores-two-points) => {:local 12 :visitor 6}))
